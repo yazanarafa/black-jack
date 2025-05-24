@@ -1,10 +1,9 @@
 //# black-jack
 //its a game 
 #include <iostream>
-#include <cstdlib>
+#include<random>
 #include <ctime>
 #include <vector>
-#include <string>
 
 using namespace std;
 
@@ -84,7 +83,7 @@ int main() {
     cout << "\nDealer's turn..." << endl;
     showHand(dealerHand, "Dealer");
 
-    while (calculateTotal(dealerHand) < 17) {
+    while (calculateTotal(dealerHand) < calculateTotal(playerHand)) {
         cout << "Dealer hits." << endl;
         dealerHand.push_back(drawCard());
         showHand(dealerHand, "Dealer");
